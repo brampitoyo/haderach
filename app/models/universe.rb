@@ -8,11 +8,11 @@ class Universe < ActiveRecord::Base
   before_validation :downcase!
   
   def address
-    @link ||= website ? website : "http://en.wikipedia.org/wiki/#{name}"
+    website ? website : "http://en.wikipedia.org/wiki/#{name}"
   end
   
   def proper
-    @name ||= name.titleize
+    name.titleize
   end
   
   private

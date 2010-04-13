@@ -1,0 +1,19 @@
+<% @paragraphs.each do |para| %>
+	<p>
+	<% para.each do |word| %>
+		<%= word.proper %>
+	<% end %>
+	<% if @phrase %>
+	 <%= "#{@phrase.proper}" %>
+	<% end %>
+	</p>
+<% end %>
+<hr />
+Universes represented in the paragraphs
+<% @universes.each do |para| %>
+	<p>
+		<% para.each do |uni| %>
+			<%= link_to uni.proper, uni.address %>
+		<% end %>
+	</p>
+<% end %>

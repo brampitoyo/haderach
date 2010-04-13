@@ -4,12 +4,20 @@ class Phrase < ActiveRecord::Base
   validates_presence_of :phrase, :universe_id
   before_validation :downcase!
   
+  def self.some
+    Phrase.find :all, :order => 'random()', :offset => (Phrase.count * rand).to_i, :limit => rand(100) + 1
+  end
+
+  def self.one
+    Phrase.find :all, :order => 'random()', :offset => (Phrase.count * rand).to_i, :limit => 1
+  end
+
   def proper
-    @phrase ||= titleize ? phrase.titleize : phrase.humanize
+    titleize ? phrase.titleize : phrase.humanize
   end
   
   def address
-    @address ||= website ? website : "http://google.com/search?q=#{proper}"
+    website ? website : "http://google.com/search?q=#{proper}"
   end
   private
   

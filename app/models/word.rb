@@ -4,16 +4,34 @@ class Word < ActiveRecord::Base
   validates_presence_of :word, :universe_id
   before_validation :downcase!
     
-  def rand(chance = 10)
-    rand(chance) == 1 ? proper : word
+  def self.some
+    Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(100) + 1
+  end
+
+  def self.one
+    Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => 1
+  end
+  
+  def self.paragraph(min = 20)
+    para = self.some
+    while para.count < min
+      para += self.some
+    end
+    para
+  end
+  
+  def self.universes(para)
+    universes = []
+    para.each{|word| universes << word.universe}
+    universes.uniq
   end
   
   def proper
-    @word ||= is_name ? word.titleize : word.humanize.downcase
+    is_name ? word.titleize : word.humanize.downcase
   end
   
   def address
-    @link ||= website ? website : "http://en.wikipedia.org/wiki/#{word}"
+    website ? website : "http://en.wikipedia.org/wiki/#{word}"
   end
 
   private

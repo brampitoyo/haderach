@@ -10,6 +10,10 @@ ActionController::Routing::Routes.draw do |map|
   map.login 'login', :controller => 'user_sessions', :action => 'new'
   map.resources :user_sessions
 
+  map.connect 'paragraphs/:num/:min', :controller => 'paragraphs', :action => 'index'
+  map.connect 'paragraphs/:num', :controller => 'paragraphs', :action => 'index'
+  map.connect 'paragraphs', :controller => 'paragraphs', :action => 'index', :num => 3
+  map.connect 'paragraph/:min', :controller => 'paragraphs', :action => 'index'
   map.resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

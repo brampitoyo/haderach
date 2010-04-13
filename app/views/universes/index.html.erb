@@ -8,7 +8,7 @@
 
 <% @universes.each do |universe| %>
   <tr>
-    <td><%= link_to universe.name, universe.link %></td>
+    <td><%= link_to universe.name, universe.address %></td>
     <td><%=h universe.description %></td>
     <td><%= link_to 'Show', universe %></td>
     <td><%= link_to 'Edit', edit_universe_path(universe) %></td>
