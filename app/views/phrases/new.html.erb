@@ -1,11 +1,11 @@
-<h1>Editing word</h1>
+<h1>New phrase</h1>
 
-<% form_for(@word) do |f| %>
+<% form_for(@phrase) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :word %><br />
-    <%= f.text_field :word %>
+    <%= f.label :phrase %><br />
+    <%= f.text_field :phrase %>
   </p>
   <p>
     <%= f.label :definition %><br />
@@ -20,13 +20,12 @@
     <%= f.text_field :website %>
   </p>
   <p>
-    <%= f.label :is_name %><br />
-    <%= f.check_box :is_name %>
+    <%= f.label :titleize %><br />
+    <%= f.check_box :titleize %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @word %> |
-<%= link_to 'Back', words_path %>
+<%= link_to 'Back', phrases_path %>

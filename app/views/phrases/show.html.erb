@@ -1,0 +1,28 @@
+<p>
+  <b>Phrase:</b>
+  <%=h @phrase.phrase %>
+</p>
+
+<p>
+  <b>Definition:</b>
+  <%=h @phrase.definition %>
+</p>
+
+<p>
+  <b>Universe:</b>
+  <%=h @phrase.universe_id %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%=h @phrase.website %>
+</p>
+
+<p>
+  <b>Titleize:</b>
+  <%=h @phrase.titleize %>
+</p>
+
+
+<%= link_to 'Edit', edit_phrase_path(@phrase) %> |
+<%= link_to 'Back', phrases_path %>

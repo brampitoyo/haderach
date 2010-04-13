@@ -3,14 +3,12 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Website</th>
     <th>Description</th>
   </tr>
 
 <% @universes.each do |universe| %>
   <tr>
-    <td><%=h universe.name %></td>
-    <td><%=h universe.website %></td>
+    <td><%= link_to universe.name, universe.link %></td>
     <td><%=h universe.description %></td>
     <td><%= link_to 'Show', universe %></td>
     <td><%= link_to 'Edit', edit_universe_path(universe) %></td>

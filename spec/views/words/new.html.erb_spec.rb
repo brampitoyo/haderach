@@ -10,8 +10,7 @@ describe "/words/new.html.erb" do
       :definition => "value for definition",
       :universe_id => 1,
       :website => "value for website",
-      :is_name => false,
-      :titleize => false
+      :is_name => false
     )
   end
 
@@ -24,7 +23,6 @@ describe "/words/new.html.erb" do
       with_tag("input#word_universe_id[name=?]", "word[universe_id]")
       with_tag("input#word_website[name=?]", "word[website]")
       with_tag("input#word_is_name[name=?]", "word[is_name]")
-      with_tag("input#word_titleize[name=?]", "word[titleize]")
     end
   end
 end

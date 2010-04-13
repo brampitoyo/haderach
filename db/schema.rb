@@ -9,7 +9,53 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100413162248) do
+ActiveRecord::Schema.define(:version => 20100413182744) do
+
+  create_table "genres", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "link_universes", :force => true do |t|
+    t.integer  "link_id"
+    t.integer  "universe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "link_words", :force => true do |t|
+    t.integer  "link_id"
+    t.integer  "word_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "links", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "phrases", :force => true do |t|
+    t.string   "phrase",      :null => false
+    t.string   "definition"
+    t.integer  "universe_id", :null => false
+    t.string   "website"
+    t.boolean  "titleize"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "universes", :force => true do |t|
+    t.string   "name",        :null => false
+    t.string   "website"
+    t.text     "description"
+    t.integer  "genre_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -17,6 +63,16 @@ ActiveRecord::Schema.define(:version => 20100413162248) do
     t.string   "persistence_token"
     t.string   "crypted_password"
     t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "words", :force => true do |t|
+    t.string   "word",                           :null => false
+    t.string   "definition"
+    t.integer  "universe_id",                    :null => false
+    t.string   "website"
+    t.boolean  "is_name",     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

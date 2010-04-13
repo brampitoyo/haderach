@@ -1,15 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  word: MyString
+  phrase: MyString
   definition: MyString
   universe_id: 1
   website: MyString
-  is_name: false
+  titleize: false
 
 two:
-  word: MyString
+  phrase: MyString
   definition: MyString
   universe_id: 1
   website: MyString
-  is_name: false
+  titleize: false
