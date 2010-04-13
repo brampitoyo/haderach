@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @universe.name %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%=h @universe.website %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @universe.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_universe_path(@universe) %> |
+<%= link_to 'Back', universes_path %>

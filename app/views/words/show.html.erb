@@ -1,0 +1,33 @@
+<p>
+  <b>Word:</b>
+  <%=h @word.word %>
+</p>
+
+<p>
+  <b>Definition:</b>
+  <%=h @word.definition %>
+</p>
+
+<p>
+  <b>Universe:</b>
+  <%=h @word.universe_id %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%=h @word.website %>
+</p>
+
+<p>
+  <b>Is name:</b>
+  <%=h @word.is_name %>
+</p>
+
+<p>
+  <b>Titleize:</b>
+  <%=h @word.titleize %>
+</p>
+
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>
