@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :phrases
-
   map.resources :words
 
   map.resources :universes
