@@ -6,6 +6,7 @@ class CreateWords < ActiveRecord::Migration
       t.integer :universe_id, :null => false
       t.string :website
       t.boolean :is_name, :default => false
+      t.boolean :is_acronym, :default => false
 
       t.timestamps
     end

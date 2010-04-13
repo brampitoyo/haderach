@@ -27,7 +27,13 @@ class Word < ActiveRecord::Base
   end
   
   def proper
-    is_name ? word.titleize : word.humanize.downcase
+    if is_acrynom
+      word.upcase
+    elsif is_name
+      word.titleize
+    else
+      word.humanize.downcase
+    end
   end
   
   def address

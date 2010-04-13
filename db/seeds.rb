@@ -34,6 +34,8 @@ gurney_halleck palimbasha farad'n tyekanik irulan javid tabr habbanya_ridge bash
 quizariat shadout_mapes Tupali varota combine_honnete_ober_advancer_mercantiles bhotani_jib lisan_al-gaib
 ).each{ |word| Word.create(:word => word, :universe_id => dune.id, :is_name => true) }
 
+%w(choam).each{ |word| Word.create(:word => word, :universe_id => dune.id, :is_acronym => true) }
+
 %w(seitch melange mentat fremkit adab akarso alam_al-mithal al-lat ampoliros amtal auliya aumas ayat bakka baliset
 baradye baraka bindu prana_bindu bled burseg butlerian caid chaumas chaumurky cherem cielago
 crysknife derch distrans elacca el-sayal erg fai filt-plug fiqh fremkit geyrat ghafla giudichar graben gridex_plane
@@ -45,5 +47,5 @@ schlag selamlik semuta servok shah-nama shari-a shigawire sihaya sirat solari so
 umma uroshnor batigh varite wali weirding yali suk bi-la_kaifa
 ).each{ |word| Word.create(:word => word, :universe_id => dune.id)}
 
-%w(tardis 
-)
+Word.create(:word => "tardis", :universe_id => Universe.find_by_name("doctor_who"), :is_acronym => true) 
+%(dalek skaro kaled rani yeti sontarans silurians autons).each{ Word.create(:word => "tardis", :universe_id => Universe.find_by_name("doctor_who"), :is_name => true)}
