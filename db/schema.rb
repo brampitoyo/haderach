@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100413182744) do
+ActiveRecord::Schema.define(:version => 20100414152413) do
 
   create_table "genres", :force => true do |t|
     t.string   "name",       :null => false
@@ -38,11 +38,26 @@ ActiveRecord::Schema.define(:version => 20100413182744) do
     t.datetime "updated_at"
   end
 
+  create_table "managers", :force => true do |t|
+    t.string   "name"
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "universe_managers", :force => true do |t|
+    t.integer  "manager_id"
+    t.integer  "universe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "universes", :force => true do |t|
-    t.string   "name",        :null => false
+    t.string   "name",                       :null => false
     t.string   "website"
     t.text     "description"
-    t.integer  "genre_id",    :null => false
+    t.integer  "genre_id",                   :null => false
+    t.integer  "manager_id",  :default => 1, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

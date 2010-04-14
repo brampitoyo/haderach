@@ -31,10 +31,14 @@
 								<li><%= link_to "Known Universes", universes_path %></li>
 								<li><%= link_to "Full Word list", words_path %></li>
 								<li><%= link_to "People Who Help", managers_path %></li>
+							</ul>
 					<li>
-						<h3><%= link_to @bene_gesserit.name.titleize, @bene_gesserit.website %> Rocks!</h3>
-						<p><%= @bene_gesserit.name.titleize %> Helps
-						<h3>Help The Breeding Program!</h3>
+						<h3><%= link_to @random.manager.name.titleize, @random.manager.website %> is awesome!</h3>
+						<p><%= @random.manager.name.titleize %> helped build the Kwisatz Haderach by managing
+							the <%= link_to @random.name.titleize, @random.address %> universe.
+						</p>
+					</li>
+						<h3><%= link_to "Help The Breeding Program!", home_url("wordlist") %></h3>
 						<p>Help build the Kwisatz Haderach. <a href="http://mettadore.com">Contact me</a> with questions
 							or if you want to be <strong>super nice</strong> and give me a list of words for a certain 
 							<%= link_to "Science Fiction or Fantasy universe that's missing or could use some help", universes_url %>.

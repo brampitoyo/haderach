@@ -11,14 +11,18 @@
 </p>
 <table>
   <tr>
-    <th>Name</th>
+    <th>Universe</th>
 		<th>Words</th>
+		<th>Genre</th>
+		<th>Manager</th>
   </tr>
 
 <% @universes.each do |universe| %>
   <tr>
     <td><%= link_to universe.name.titleize, universe.address %></td>
-		<td><%= universe.count %>
+		<td><%= universe.count %></td>
+		<td><%= universe.genre.name.titleize %></td>
+		<td><%= link_to universe.manager.name.titleize, universe.manager.website %></td>
   </tr>
 <% end %>
 </table>

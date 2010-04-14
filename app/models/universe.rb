@@ -1,9 +1,9 @@
 class Universe < ActiveRecord::Base
   belongs_to  :genre
-  belongs_to  :manager, :class_name => 'Helper'
+  belongs_to  :manager
   
-  has_many :helper_universes
-  has_many :helpers, :through => :helper_universes
+  has_many :universe_managers
+  has_many :helpers, :through => :universe_managers
   has_many :words
   has_many :phrases
   

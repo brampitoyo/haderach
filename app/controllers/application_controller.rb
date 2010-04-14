@@ -6,7 +6,13 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  @bene_gesserit = Universe.one.manager
+  before_filter :random_universe
+  
+  private
+  
+  def random_universe
+    @random = Universe.one
+  end
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 end

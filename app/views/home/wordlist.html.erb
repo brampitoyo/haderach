@@ -1,4 +1,31 @@
 <h2>The Breeding Program</h2>
-<p>I'd love to have your help making the Kwisatz Haderach. If you have a favorite Science Fiction
-	or Fantasy universe, you can send me a wordlist and I'll include it here. Send me your name and 
-	a website link and I'll give you credit on the <%= link_to "Universes", universes_url %> page.
+<p><Strong>Help make the Kwisatz Haderach!</strong></p> 
+	If you have a favorite Science Fiction
+	or Fantasy universe, you can send me a wordlist for it and I'll include it here. Send me your name and 
+	a website link and I'll give you credit on the <%= link_to "Universes", universes_url %> page.</p>
+	<p>
+	Wordlists are best if they are space separated, no quotes, all lower case, and separated into proper nouns,
+	acronyms and plain words.</p>
+	
+	<h3>Non-programmers</h3>
+	<p>Here's an example:</p>
+	<pre>
+		# Proper Nowns
+		harkonnen hasimir_fenring glossu_rabban 
+		feyd-rautha lankiveil geidi_prime caladan
+		
+		# Acronyms
+		choam
+		
+		# regular words
+		gom_jabbar guild haiiiii-yoh harj hajra 
+		heighliner hiereg ibad ijaz ikhut-eigh 
+		ilm inkvine jubba kanly karama khala 
+	</pre>
+	</p>
+	This creates words Harkonnen, Hasimir Fenring, Feyd-Rautha, CHOAM, gom jabar, ikhut-eigh, etc.</p>
+	
+	<h3>Programmers</h3>
+	It's Ruby, so take a look at the <a href="http://github.com/mettadore/haderach/blob/master/db/universes/dune.rb">
+	Dune wordlist</a> to see what I'm doing.
+	
