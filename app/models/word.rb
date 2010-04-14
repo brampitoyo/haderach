@@ -5,25 +5,36 @@ class Word < ActiveRecord::Base
   before_validation :downcase!
     
   def self.some
-    Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(20) + 1
+    Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(10) + 5
   end
 
   def self.one
     Word.find(:all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => 1)[0]
   end
   
+  def self.sentence
+    sentence = self.some
+    sentence.first.is_name = true #Make it titleize this once to start the paragraph, but don't save to the DB
+    sentence
+  end
+  
   def self.paragraph(min = 20)
-    para = self.some
-    while para.count < min
-      para += self.some
+    para = []
+    count = 0
+    while count < min
+      para << self.sentence
+      count += para.last.count
     end
-    para[0].is_name = true #Make it titleize this once to start the paragraph, but don't save to the DB
     para
   end
   
   def self.universes(para)
     universes = []
-    para.each{|word| universes << word.universe}
+    para.each do |sentence|
+      sentence.each do |word| 
+        universes << word.universe
+      end
+    end
     universes.uniq
   end
   

@@ -3,8 +3,14 @@
 
 <% @paragraphs.each do |para| %>
 	<p>
-	<% para.each do |word| %>
-		<%= word.proper %>
+	<% para.each do |sentence| %>
+		<% sentence.each do |word| %>
+			<% if word == sentence.last %> 
+				<%= word.proper + "." %>
+			<% else %>
+			  <%= word.proper %>
+			<% end %>
+		<% end %>
 	<% end %>
 	</p>
 <% end %>

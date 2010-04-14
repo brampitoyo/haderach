@@ -23,7 +23,7 @@ class ParagraphsController < ApplicationController
     @num.times do
       @words << Word.one
     end
-    @universes = Word.universes(@words)
+    @universes = Word.universes([@words])
 
     respond_to do |format|
       format.html # index.html.erb
