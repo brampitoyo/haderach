@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  before_filter :login_required, :except => [:index, :show]
   # GET /words
   # GET /words.xml
   def index

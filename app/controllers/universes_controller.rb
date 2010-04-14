@@ -1,4 +1,5 @@
 class UniversesController < ApplicationController
+  before_filter :login_required, :except => [:index, :show]
   # GET /universes
   # GET /universes.xml
   def index
