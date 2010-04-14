@@ -11,6 +11,14 @@ class Universe < ActiveRecord::Base
     website ? website : "http://en.wikipedia.org/wiki/#{name}"
   end
   
+  def words
+    Word.find_all_by_universe_id(self.id)
+  end
+  
+  def count
+    words ? words.count : 0
+  end
+  
   def proper
     name.titleize
   end
