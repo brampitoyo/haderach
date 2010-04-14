@@ -1,4 +1,11 @@
 <div id="getting-started">
+	<% @paragraphs.each do |para| %>
+		<p>
+		<% para.each do |word| %>
+			<%= word.proper %>
+		<% end %>
+		</p>
+	<% end %>
   <h1>Bookmark It!</h1>
   <h2>Here&rsquo;s how to get placeholder text<br/> that doesn't completely suck</h2>
 	<p>

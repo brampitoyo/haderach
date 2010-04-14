@@ -48,9 +48,13 @@ a:hover {
 }
 
 
-#header, #about, #getting-started {
+#header, #about  {
   padding-left: 75px;
   padding-right: 30px;
+}
+#getting-started {
+  padding-left: 35px;
+  padding-right: 20px;
 }
 
 
@@ -105,8 +109,7 @@ a:hover {
 
 
 #getting-started {
-  margin-top: 25px;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 #getting-started h1 {
   margin: 0;

@@ -5,7 +5,7 @@ class Word < ActiveRecord::Base
   before_validation :downcase!
     
   def self.some
-    Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(100) + 1
+    Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(20) + 1
   end
 
   def self.one
