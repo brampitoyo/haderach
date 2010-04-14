@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Kwasatz Haderach is the <em>new</em> Lorem Ipsum!</title>
+		<%= stylesheet_link_tag "style" %>
+  </head>
+  <body>
+    <div id="page">
+      <div id="sidebar">
+        <ul id="sidebar-items">
+					<li>
+						<h3>Quick Kwasatz!</h3>
+						<ul class="links">
+							<li><%= link_to "1 paragraph", single_paragraph_url %></li>
+							<li><%= link_to "5 paragraphs", paragraphs_url(:num => 5, :min => 10) %></li>
+							<li><%= link_to "A Title", single_title_url %></li>
+						</ul>
+					</li>
+          <li>
+            <h3><%= link_to "Universes", universes_path %></h3>
+						<p>All the universes we have words for</p>
+					</li>
+					<li>
+            <h3><%= link_to "Full Word list", words_path %></h3>
+						<p>See the full word list!</p>
+          </li>
+        </ul>
+      </div>
+
+      <div id="content">
+	      <div id="header">
+          <h1><%= link_to "Kwisatz Haderach", root_url %></h1>
+          <h2>The <strike>voice</strike> <tt style="color:red">placeholder text</tt><br /> from the Outer World!</h2>
+        </div>
+				<p style="color: green"><%= flash[:notice] %></p>
+
+				<%= yield %>
+
+      </div>
+      
+      <div id="footer">&nbsp;</div>
+    </div>
+  </body>
+</html>

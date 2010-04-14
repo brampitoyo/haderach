@@ -1,3 +1,6 @@
+<h3><%= @num > 1 ? "Here are #{@num}" : "Here is #{@num}" %> 
+	paragraphs with a minimum of <%= @min %> words <%= "each" if @num > 1 %></h3>
+
 <% @paragraphs.each do |para| %>
 	<p>
 	<% para.each do |word| %>
@@ -6,9 +9,10 @@
 	</p>
 <% end %>
 <hr />
-Universes represented in the paragraphs
-<% @universes.each do |para| %>
+<strong>Universes represented in the <%= @num > 1 ? "paragraphs" : "paragraph" %></strong>
+<% @universes.each_with_index do |para, i| %>
 	<p>
+		<%= "Paragraph " + (i + 1).to_s + ":" if @num > 1 %>
 		<% para.each do |uni| %>
 			<%= link_to uni.proper, uni.address %>
 		<% end %>

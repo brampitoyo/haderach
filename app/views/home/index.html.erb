@@ -1,0 +1,32 @@
+<div id="getting-started">
+  <h1>Bookmark It!</h1>
+  <h2>Here&rsquo;s how to get placeholder text<br/> that doesn't completely suck</h2>
+	<p>
+		<ul>
+			<li><strong><%= link_to "/paragraph", single_paragraph_url %></strong><br/> 
+				Default: One paragraph with a <em>minimum</em> of 20 words
+			</li>
+			<li><strong><%= link_to "/paragraph/57", paragraph_url(:min => 57) %></strong><br/> 
+				One paragraph with a <em>minimum</em> of 57 words (use any number you want)
+			</li>
+			<li><strong><%= link_to "/paragraphs", multiple_url %></strong><br/>
+				Default 3 paragraphs, each with a minimum of 20 words.
+			</li>
+			<li><strong><%= link_to "/paragraphs/5", num_paragraphs_url(:num => 5) %></strong><br/>
+				5 (or any number) paragraphs with a default minimum of 20 words
+			</li>
+			<li><strong><%= link_to "/paragraphs/6/32", paragraphs_url(:num => 6, :min => 32) %></strong><br/>
+				6 (or any number) paragraphs with a minimum of 32 (or any number) words each
+			</li>
+			<li><strong><%= link_to "/title", single_title_url %></strong><br/>
+				Default: A single word title
+			</li>
+			<li><strong><%= link_to "/title/4", title_url(:num => 4) %></strong><br/>
+				A title with <em>minimum</em> of 4 (or any number) words
+			</li>
+			
+			
+		</ul>
+
+	</p>
+</div>
