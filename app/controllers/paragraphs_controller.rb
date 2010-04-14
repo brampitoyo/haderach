@@ -1,6 +1,6 @@
 class ParagraphsController < ApplicationController
 
-    def index
+    def paragraph
       @paragraphs = []
       @universes = []
       @num = params[:num].to_i > 0 ? params[:num].to_i : 1
@@ -10,14 +10,26 @@ class ParagraphsController < ApplicationController
         @universes << Word.universes(para)
         @paragraphs << para
       end
-      if true #rand(5) = 1
-        @phrase << Phrase.one
-      end
 
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @paragraphs }
       end
     end
+    
+    def title
+      @words = []
+      @num = params[:num].to_i > 0 ? params[:num].to_i : 1
+      @num.times do
+        @words << Word.one
+      end
+      @universes = Word.universes(@words)
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @paragraphs }
+      end
+    end
+      
 
 end

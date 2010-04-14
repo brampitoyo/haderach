@@ -47,5 +47,6 @@ schlag selamlik semuta servok shah-nama shari-a shigawire sihaya sirat solari so
 umma uroshnor batigh varite wali weirding yali suk bi-la_kaifa
 ).each{ |word| Word.create(:word => word, :universe_id => dune.id)}
 
-Word.create(:word => "tardis", :universe_id => Universe.find_by_name("doctor_who"), :is_acronym => true) 
-%(dalek skaro kaled rani yeti sontarans silurians autons).each{ Word.create(:word => "tardis", :universe_id => Universe.find_by_name("doctor_who"), :is_name => true)}
+drwho = Universe.find_by_name("doctor_who")
+Word.create(:word => "tardis", :universe_id => drwho.id, :is_acronym => true) 
+%(dalek skaro kaled rani yeti sontarans silurians autons).each{ Word.create(:word => "tardis", :universe_id => drwho.id, :is_name => true)}

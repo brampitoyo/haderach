@@ -9,7 +9,7 @@ class Word < ActiveRecord::Base
   end
 
   def self.one
-    Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => 1
+    Word.find(:all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => 1)[0]
   end
   
   def self.paragraph(min = 20)
@@ -27,7 +27,7 @@ class Word < ActiveRecord::Base
   end
   
   def proper
-    if is_acrynom
+    if is_acronym
       word.upcase
     elsif is_name
       word.titleize

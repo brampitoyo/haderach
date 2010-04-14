@@ -38,16 +38,6 @@ ActiveRecord::Schema.define(:version => 20100413182744) do
     t.datetime "updated_at"
   end
 
-  create_table "phrases", :force => true do |t|
-    t.string   "phrase",      :null => false
-    t.string   "definition"
-    t.integer  "universe_id", :null => false
-    t.string   "website"
-    t.boolean  "titleize"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "universes", :force => true do |t|
     t.string   "name",        :null => false
     t.string   "website"
@@ -73,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20100413182744) do
     t.integer  "universe_id",                    :null => false
     t.string   "website"
     t.boolean  "is_name",     :default => false
+    t.boolean  "is_acronym",  :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

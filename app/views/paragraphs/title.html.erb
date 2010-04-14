@@ -1,0 +1,11 @@
+<p>
+<% @words.each do |word| %>
+	<%= word.proper.titleize %>
+<% end %>
+<hr />
+Universes represented in the title
+<p>
+	<% @universes.each do |uni| %>
+		<%= link_to uni.proper, uni.address %>
+	<% end %>
+</p>
