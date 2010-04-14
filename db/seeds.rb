@@ -26,7 +26,7 @@ scifi = Genre.find_by_name("Science Fiction")
 #star_wars star_trek Ender's_game discworld wild_cards
 #).each{ |univ| Universe.create(:name => univ, :genre_id => scifi.id) }
 
-Universe.create(:name => "dune", :website => "http://en.wikipedia.org/wiki/Dune_(novel)", :genre_id => scifi.id)
+Universe.create(:name => "dune", :website => "http://en.wikipedia.org/wiki/Dune_universe", :genre_id => scifi.id)
 Universe.create(:name => "foundation", :website => "http://en.wikipedia.org/wiki/Foundation_series", :genre_id => scifi.id, :manager_id => M1.id)
 Universe.create(:name => "ringworld", :genre_id => scifi.id, :manager_id => M1.id)
 
