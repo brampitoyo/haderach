@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @manager.name %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%=h @manager.website %>
+</p>
+
+
+<%= link_to 'Edit', edit_manager_path(@manager) %> |
+<%= link_to 'Back', managers_path %>

@@ -1,0 +1,20 @@
+<h1>Editing manager</h1>
+
+<% form_for(@manager) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @manager %> |
+<%= link_to 'Back', managers_path %>
