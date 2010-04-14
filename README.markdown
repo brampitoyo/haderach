@@ -1,20 +1,20 @@
-h1 Kwisatz Haderach
+# Kwisatz Haderach
 
 The placeholder text that can be in all places simultaneously.
 
-Basically, it's a stupid waste of time. You see, I'm really bored with (Lorem Ipsum)[http://en.wikipedia.org/wiki/Lorem_ipsum]
+Basically, it's a stupid waste of time. You see, I'm really bored with [Lorem Ipsum](http://en.wikipedia.org/wiki/Lorem_ipsum)
 and wanted to come up with a placeholder text generator that was more fun. So I came up with this one.
 
 The idea is that whenever I (or you, or anyone) read cool words in Science Fiction and Fantasy books, I can add them
 to Kwisatz Haderach and then use the public API to generate randomized text that has a bit of a coolness factor.
 
-The implementation will always be at the (Kwisatz Haderach homepage)[http://kwisatz.hadera.ch]
+The implementation will always be at the [Kwisatz Haderach homepage](http://kwisatz.hadera.ch)
 
 This is just the boring code for a ridiculously simple, yet horribly time-wasting, Rails app.
 
-h2 License
+## License
 
-Copyright (c) 2010 John W.P. Metta
+Copyright (c) 2010 [John W.P. Metta](http://mettadore.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
