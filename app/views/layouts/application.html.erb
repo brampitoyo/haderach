@@ -21,18 +21,19 @@
 						<ul class="links">
 							<li><%= link_to "1 paragraph", single_paragraph_url %></li>
 							<li><%= link_to "5 paragraphs", paragraphs_url(:num => 5, :min => 10) %></li>
-							<li><%= link_to "A Title", single_title_url %></li>
+							<li><%= link_to "A Single Word Title", single_title_url %></li>
+							<li><%= link_to "Multi-Word Title", title_url(:num => 3) %></li>
 						</ul>
 					</li>
           <li>
-            <h3><%= link_to "Universes", universes_path %></h3>
-						<p>All the universes we have words for</p>
-					</li>
+            <h3>What's Here?</h3>
+							<ul class="links">
+								<li><%= link_to "Known Universes", universes_path %></li>
+								<li><%= link_to "Full Word list", words_path %></li>
+								<li><%= link_to "People Who Help", managers_path %></li>
 					<li>
-            <h3><%= link_to "Full Word list", words_path %></h3>
-						<p>See the full word list!</p>
-          </li>
-					<li>
+						<h3><%= link_to @bene_gesserit.name.titleize, @bene_gesserit.website %> Rocks!</h3>
+						<p><%= @bene_gesserit.name.titleize %> Helps
 						<h3>Help The Breeding Program!</h3>
 						<p>Help build the Kwisatz Haderach. <a href="http://mettadore.com">Contact me</a> with questions
 							or if you want to be <strong>super nice</strong> and give me a list of words for a certain 

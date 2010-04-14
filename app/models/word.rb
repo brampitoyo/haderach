@@ -17,6 +17,7 @@ class Word < ActiveRecord::Base
     while para.count < min
       para += self.some
     end
+    para[0].is_name = true #Make it titleize this once to start the paragraph, but don't save to the DB
     para
   end
   

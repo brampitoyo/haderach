@@ -1,7 +1,9 @@
-<p>
+<p><strong>A <%= @num > 1 ? "Multi-Word" : "Single Word" %> Title</p>
+<h2>
 <% @words.each do |word| %>
 	<%= word.proper.titleize %>
 <% end %>
+</h2>
 <hr />
 Universes represented in the title
 <p>

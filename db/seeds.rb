@@ -6,6 +6,8 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
+Manager.create(:name => "John Metta", :website => "http://mettadore.com")
+
 %w(
 science_fiction fantasy
 ).each{|genre| Genre.create(:name => genre) }

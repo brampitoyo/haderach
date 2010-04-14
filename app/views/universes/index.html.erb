@@ -1,5 +1,14 @@
-<h1>Listing universes</h1>
-
+<h2>Known universes</h2>
+<p>My goal is to have as many "strange," "non-english," or at least "non-common" words as possible from each
+	universe. I have about 200 from Dune, which makes for a good number of words to build paragraphs.
+</p>
+<p>Ideally, people will be able to build placeholder text from a single universe as well as jumbles of random text 
+	from all of them. That'll take 100-200 words each (easy with a glossary, not so without one).
+</p>
+<p> If you'd like to 
+	help, <a href="http://mettadore.com"> contact me</a> or just send a list of words for a given universe using the 
+	<%= link_to "Wordlist instructions", home_url("wordlist") %>.
+</p>
 <table>
   <tr>
     <th>Name</th>
@@ -8,7 +17,7 @@
 
 <% @universes.each do |universe| %>
   <tr>
-    <td><%= link_to universe.name, universe.address %></td>
+    <td><%= link_to universe.name.titleize, universe.address %></td>
 		<td><%= universe.count %>
   </tr>
 <% end %>
